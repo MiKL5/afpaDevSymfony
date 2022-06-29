@@ -19,6 +19,21 @@ class Disc
     #[ORM\ManyToOne(targetEntity: Artist::class, inversedBy: 'discs')]
     private $artist;
 
+    #[ORM\Column(type: 'string', length: 255)]
+    private $genre;
+
+    #[ORM\Column(type: 'string', length: 255)]
+    private $label;
+
+    #[ORM\Column(type: 'string', length: 255)]
+    private $picture;
+
+    #[ORM\Column(type: 'string', length: 255)]
+    private $price;
+
+    #[ORM\Column(type: 'string', length: 255)]
+    private $year;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -44,6 +59,66 @@ class Disc
     public function setArtist(?Artist $artist): self
     {
         $this->artist = $artist;
+
+        return $this;
+    }
+
+    public function getGenre(): ?string
+    {
+        return $this->genre;
+    }
+
+    public function setGenre(string $genre): self
+    {
+        $this->genre = $genre;
+
+        return $this;
+    }
+
+    public function getLabel(): ?string
+    {
+        return $this->label;
+    }
+
+    public function setLabel(string $label): self
+    {
+        $this->label = $label;
+
+        return $this;
+    }
+
+    public function getPicture(): ?string
+    {
+        return $this->picture;
+    }
+
+    public function setPicture(string $picture): self
+    {
+        $this->picture = $picture;
+
+        return $this;
+    }
+
+    public function getPrice(): ?string
+    {
+        return $this->price;
+    }
+
+    public function setPrice(string $price): self
+    {
+        $this->price = $price;
+
+        return $this;
+    }
+
+    public function getYear(): ?string
+    {
+        return $this->year;
+    }
+
+    public function setYear(string $year): self
+    {
+        $this->year = $year;
 
         return $this;
     }
