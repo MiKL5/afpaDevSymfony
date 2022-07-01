@@ -28,10 +28,10 @@ class Disc
     #[ORM\ManyToOne(targetEntity: Artist::class, inversedBy: 'discs')]
     private $artist;
 
-    #[ORM\Column(type: 'decimal', precision: 5, scale: 2, nullable: true)]
+    #[ORM\Column(type: 'decimal', precision: 5, scale: 2, nullable: false)]
     private $disc_price;
 
-    #[ORM\Column(type: 'integer', nullable: true)]
+    #[ORM\Column(type: 'integer', nullable: false)]
     private $disc_year;
 
     public function getId(): ?int
