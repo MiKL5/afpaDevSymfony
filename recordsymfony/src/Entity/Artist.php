@@ -39,7 +39,7 @@ class Artist
     {
         $this->id = $id; // affecte un nv id
         return $this; //retourne l'obj à jour
-    }    
+    }
 
     public function getArtistName(): ?string
     {
@@ -58,7 +58,7 @@ class Artist
         return $this->artist_url;
     }
 
-// le setter change l'info alors que le getter la récupère
+    // le setter change l'info alors que le getter la récupère
     public function setArtistUrl(string $artist_url): self
     {
         $this->artist_url = $artist_url; // affecte un nv id
@@ -94,5 +94,10 @@ class Artist
         }
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->artist_name;
     }
 }
