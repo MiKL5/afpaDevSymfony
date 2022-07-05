@@ -5,9 +5,14 @@
 {% block body %}
 
 <div class="example-wrapper">
+{# <a href="{{path ('app_home')}}">home</a> #}
+<a href="{{path ('app_home')}}">home</a>
 <a href="{{path ('app_artist_index')}}">artist</a>
 <a href="{{path ('app_disc_index')}}">disc</a>
 <a href="{{path ('app_user_index')}}">user</a>
 <a href="{{path ('app_login')}}">login</a>
+<a href="{{path ('app_forgot_password_request')}}">forgot password</a>
+<a href="{{path ('app_register')}}">register</a>
+
 </div>
 {% endblock %}
