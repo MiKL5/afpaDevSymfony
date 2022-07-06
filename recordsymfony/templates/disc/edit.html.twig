@@ -1,9 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Disc{% endblock %}
+{% block title %}Editer un disque{% endblock %}
 
 {% block body %}
-    <h1>Edit Disc</h1>
+<div class="container">
+    <h1 class="mt-5 mb-5 ms-3">Éditer un disque</h1>
 
     {{ include('disc/_form.html.twig', {'button_label': 'Update'}) }}
 
@@ -12,4 +13,5 @@
     
 
     {{ include('disc/_delete_form.html.twig') }}
+    </div>
 {% endblock %}
