@@ -3,9 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-                <link href="" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <link href="/css/style.css" rel="stylesheet">
         
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {# {% block stylesheets %}
@@ -33,16 +33,16 @@
                     <a class="nav-link" href="{{path ('app_profil_index')}}">Accueil<span class="sr-only"></a>
                 </li> #}
                 <li class="nav-item">
-                    <a class="nav-link ms-5" title="Artist" href="{{path ('app_artist_index')}}"> Artist</a>
+                    <a class="nav-link ms-5 navtext" title="Artist" href="{{path ('app_artist_index')}}"> Artist</a>
                 </li>
                 <li class="nav-item me-5">
-                    <a class="nav-link" title="Disc" href="{{path ('app_disc_index')}}">Disc</a>
+                    <a class="nav-link navtext" title="Disc" href="{{path ('app_disc_index')}}">Disc</a>
                 </li>
                 <li class="nav-item ms-5">
-                    <a class="nav-link" title="Login" href="{{path ('app_login')}}"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16"><path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg> Login</a>
+                    <a class="nav-link navtext" title="Login" href="{{path ('app_login')}}"><!--<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16"><path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>--> Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" title="Users" href="{{path ('app_user_index')}}"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16"><path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg> User</a>
+                    <a class="nav-link navtext" title="Users" href="{{path ('app_user_index')}}"><!--<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16"><path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>--> User</a>
                 </li>
                 {#  dropdown menu déroulant #}
                 {# <li class="nav-item dropdown">
@@ -67,8 +67,7 @@
             </form>
 
                         {% if app.user %}
-        <div class="text-light ms-5 col-3">
-            You're logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}"><svg class="text-danger"xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/><path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/></svg></a>
+        <div class="connex ms-5 col-3">You're logged in as {{ app.user.userIdentifier }} <a href="{{ path('app_logout') }}"><svg class="text-danger"xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/><path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/></svg></a>
         </div>
     {% endif %}
 

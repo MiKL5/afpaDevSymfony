@@ -1,0 +1,54 @@
+/* PRESENTATION DES PAGES */
+
+/* background */
+body {
+    background-color: rgb(10, 0, 37);
+}
+
+/* Présentation des titres, paraprahes, et liens */
+h1, p {
+    color:rgb(232, 226, 202);
+    font-weight: bold;;
+}
+
+/* paragraphes de la page de confimation d'envoi du mail de changement de mot de passe */
+#paragraphe_special {
+    font-weight: bold;
+}
+#paragraphe_special_1 {
+    font-style: italic;
+    color:crimson;
+    text-align: center;
+}
+#paragraphe_special_2 {
+    font-weight: bold;
+    text-align: center;
+}
+/* lien pour resoumettre la demande de changement de mot de passe */
+#link_special {
+    text-decoration: none;
+    font-weight: bold;
+    font-style: italic;
+    color: orange;
+}
+
+/* formulaires */
+form {
+    color:rgb(232, 226, 202);
+}
+
+/* Bouton retour */
+#orange {
+    color:orange;
+}
+
+/* NAVBAR */
+/* Liens */
+.navtext {
+    color:rgb(232, 226, 202)!important;
+}
+
+/* phrase de connxion */
+.connex {
+    color:rgb(169, 216, 191);
+}
