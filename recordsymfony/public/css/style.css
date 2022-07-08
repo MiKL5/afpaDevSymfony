@@ -52,3 +52,8 @@ form {
 .connex {
     color:rgb(169, 216, 191);
 }
+
+#user_roles_help {
+    color:rgb(255, 208, 0)!important;
+    font-style: italic;
+}
