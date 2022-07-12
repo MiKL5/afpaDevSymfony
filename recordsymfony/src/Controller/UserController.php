@@ -18,6 +18,7 @@ class UserController extends AbstractController
     #[Route('/', name: 'app_user_index', methods: ['GET'])]
     public function index(UserRepository $userRepository): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Vous n\'avez pas accès à ceci.');
         return $this->render('user/index.html.twig', [
             'users' => $userRepository->findAll(),
         ]);
@@ -26,7 +27,7 @@ class UserController extends AbstractController
     #[Route('/new', name: 'app_user_new', methods: ['GET', 'POST'])]
     public function new(Request $request, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager): Response
     {
-        // $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'User tried to access a page without having ROLE_ADMIN');
+        $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Vous n\'avez pas accès à ceci.');
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
@@ -58,6 +59,7 @@ class UserController extends AbstractController
     #[Route('/{id}', name: 'app_user_show', methods: ['GET'])]
     public function show(User $user): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Vous n\'avez pas accè à ceci.');
         return $this->render('user/show.html.twig', [
             'user' => $user,
         ]);
@@ -66,9 +68,8 @@ class UserController extends AbstractController
     #[Route('/{id}/edit', name: 'app_user_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, User $user, UserPasswordHasherInterface $userPasswordHasher, EntityManagerInterface $entityManager, $id): Response
     {
-        if ($this->getUser()->getUserIdentifier() != $user->getUserIdentifier()) {
-            $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'User tried to access a page without having ROLE_ADMIN');
-        }
+        $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Vous n\'avez pas accès à ceci.');
+
         $form = $this->createForm(UserType::class, $user);
         $form->handleRequest($request);
 
@@ -99,6 +100,8 @@ class UserController extends AbstractController
     #[Route('/{id}', name: 'app_user_delete', methods: ['POST'])]
     public function delete(Request $request, User $user, UserRepository $userRepository): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Vous n\'avez pas accès à ceci.');
+
         if ($this->isCsrfTokenValid('delete'.$user->getId(), $request->request->get('_token'))) {
             $userRepository->remove($user, true);
         }
