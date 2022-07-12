@@ -42,9 +42,11 @@
                 <li class="nav-item ms-5">
                     <a class="nav-link navtext" title="Login" href="{{path ('app_login')}}"><!--<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16"><path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>--> Login</a>
                 </li>
+                {% if is_granted('ROLE_ADMIN') %}
                 <li class="nav-item">
                     <a class="nav-link navtext" title="Users" href="{{path ('app_user_index')}}"><!--<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16"><path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>--> User</a>
                 </li>
+                {% endif %}
                 
                 {#  dropdown menu déroulant #}
                 {# <li class="nav-item dropdown">
