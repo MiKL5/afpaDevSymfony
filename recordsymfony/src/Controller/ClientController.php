@@ -18,6 +18,7 @@ class ClientController extends AbstractController
     public function show(User $user): Response
     {
         if ($this->getUser()->getUserIdentifier() != $user->getUserIdentifier()) {
+            // seul l'admin peut voir les infos de tout le monde
             $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Vous n\'avez pas accès à ceci.');
         }
         return $this->render('client/show.html.twig', [
@@ -29,6 +30,7 @@ class ClientController extends AbstractController
     public function edit(Request $request, User $user, UserRepository $userRepository): Response
     {
         if ($this->getUser()->getUserIdentifier() != $user->getUserIdentifier()) {
+            // autorisé l'accés qu'a l'administateur
             $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Vous n\'avez pas accès à ceci.');
         }
         $form = $this->createForm(User1Type::class, $user);

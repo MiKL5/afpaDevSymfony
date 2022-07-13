@@ -24,6 +24,7 @@ class ArtistController extends AbstractController
     #[Route('/new', name: 'app_artist_new', methods: ['GET', 'POST'])]
     public function new(Request $request, ArtistRepository $artistRepository): Response
     {
+        // l'admin est seul à pouvoir créer un artist
         $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Vous n\'avez pas accès à ceci.');
         
         $artist = new Artist();
@@ -53,6 +54,7 @@ class ArtistController extends AbstractController
     #[Route('/{id}/edit', name: 'app_artist_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, Artist $artist, ArtistRepository $artistRepository): Response
     {
+        // reservé à l'admin
         $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Vous n\'avez pas accès à ceci.');
 
         $form = $this->createForm(ArtistType::class, $artist);
@@ -73,6 +75,7 @@ class ArtistController extends AbstractController
     #[Route('/{id}', name: 'app_artist_delete', methods: ['POST'])]
     public function delete(Request $request, Artist $artist, ArtistRepository $artistRepository): Response
     {
+        // reservé à l'admin
         $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Vous n\'avez pas accès à ceci.');
 
         if ($this->isCsrfTokenValid('delete'.$artist->getId(), $request->request->get('_token'))) {
