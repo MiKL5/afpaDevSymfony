@@ -46,6 +46,9 @@ class ArtistController extends AbstractController
     #[Route('/{id}', name: 'app_artist_show', methods: ['GET'])]
     public function show(Artist $artist): Response
     {
+        // il être connecter pour accéder
+        $this->denyAccessUnlessGranted('ROLE_USER', null, 'Vous n\'avez pas accès à ceci.');
+
         return $this->render('artist/show.html.twig', [
             'artist' => $artist,
         ]);

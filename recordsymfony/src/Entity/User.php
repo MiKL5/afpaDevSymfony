@@ -114,4 +114,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
 
+    public function getFullName(): string
+    {
+        // if ($this->getNom())
+        //     return $this->getPrenom() . " " . $this->getNom();
+        return $this->getEmail();
+    }
 }

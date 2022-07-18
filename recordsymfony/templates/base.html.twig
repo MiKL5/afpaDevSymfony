@@ -19,13 +19,13 @@
     <body>
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand  ms-2 me-5" title="Homepage Velvet Record"href="{{path ('app_home')}}">Velvet Record</a>
+        <a class="navbar-brand  ms-2 me-5" title="Homepage Velvet Record"href="{{path ('app_home')}}"><img src="/images/record.png" height="48" width="auto"></a><!-- Les images, les fichiers css sont dans public car c'est le point de départ -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
     
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="col-6 navbar-nav mr-auto">
+            <ul class="col-8 navbar-nav mr-auto">
             
                 {# <li class="nav-item active">
                     <a class="nav-link" title="Home" href="{{path ('app_home')}}"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16"><path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5z"/></svg><span class="sr-only (current)"></span></a>
@@ -34,47 +34,41 @@
                     <a class="nav-link" href="{{path ('app_profil_index')}}">Accueil<span class="sr-only"></a>
                 </li> #}
                 <li class="nav-item">
-                    <a class="nav-link ms-5 navtext" title="Artist" href="{{path ('app_artist_index')}}"> Artist</a>
+                    <a class="nav-link ms-5 navtext" title="Liste des artiste" href="{{path ('app_artist_index')}}"> Artiste</a>
                 </li>
                 <li class="nav-item me-5">
-                    <a class="nav-link navtext" title="Disc" href="{{path ('app_disc_index')}}">Disc</a>
+                    <a class="nav-link navtext" title="liste des disque" href="{{path ('app_disc_index')}}">Disque</a>
                 </li>
-                <li class="nav-item ms-5">
-                    <a class="nav-link navtext" title="Login" href="{{path ('app_login')}}"><!--<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16"><path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>--> Login</a>
-                </li>
-                {% if is_granted('ROLE_ADMIN') %}
-                <li class="nav-item">
-                    <a class="nav-link navtext" title="Users" href="{{path ('app_user_index')}}"><!--<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16"><path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg>--> User</a>
-                </li>
-                {% endif %}
-                
-                {#  dropdown menu déroulant #}
-                {# <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Menu déroulant
-                    </a> #}
-                    {# 
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li> #}
-            </ul>
+                <div class="dropdown ahah">
+                    <button class="btn dropdown-toggle navtext ahah" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-person-fill navtext" viewBox="0 0 16 16"><path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg></button>
+                        <ul class="dropdown-menu bg-dark ahahb" aria-labelledby="dropdownMenu2"><!-- le contenant de la liste est translucide -->
+                            {% if not app.user %}<!-- Disparaît dés q'une personne est connectée (Connexion et S'enregistrer) -->
+                                <li><button class="dropdown-item nav-link navtext ahah" type="button" title="Page de connexion"><a class="dropdown-item nav-link navtext ahah" href="{{path ('app_register')}}">S'enregistrer</a></button></li>
+                                <li><button class="dropdown-item nav-link navtext ahah" type="button" title="Page de connexion"><a class="dropdown-item nav-link navtext ahah" href="{{path ('app_login')}}">Se connecter</a></button></li>
+                            {% endif %}
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <li><button class="dropdown-item nav-link navtext ahah" type="button" title="Infos utilisateur"><a class="dropdown-item nav-link navtext ahah" href="{{path ('app_user_index')}}">Utilisateurs</a></button></li>
+                            {% endif %}
+                            {% if is_granted('ROLE_CLIENT') %}
+                            <li><button class="dropdown-item nav-link navtext ahah" type="button"><a class="dropdown-item nav-link navtext ahah" href="">À propos de {{ app.user.userIdentifier }}</a></button></li>
+                            {% endif %}
+                            {% if is_granted('ROLE_USER') %}
+                            <li><button class="dropdown-item nav-link navtext ahah" type="button"><a class="dropdown-item nav-link navtext ahah"href="{{ path('app_logout') }}">Déconnexion d'{{ app.user.userIdentifier }}</a></button></li>
+                            {% endif %}
+                        </ul>
+                </div>
+            </div>
 
-            <form class="form-inline my-2 col-3 my-lg-0 d-flex">
+
+            {# <form class="form-inline my-2 col-3 my-lg-0 d-flex"> #}
                 {# <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn-sm btn-outline-success my-2 my-sm-0 mx-2" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg></button> #}
-            </form>
+            {# </form> #}
 
-                        {% if app.user %}
-        <div title="Bienvenue ! Si ce n'est pas vous quittez la session." class="connex ms-5 col-3">Bienvenue, vous êtes {{ app.user.userIdentifier }} <a title="Si ce n'est pas vous ou si vous le souhaiter, quittez la session" href="{{ path('app_logout') }}"><svg class="text-danger"xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/><path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/></svg></a>{#  #}
-        </div>
-    {% endif %}
+            {% if app.user %}<!-- utiliser getFullName au lie de userIdentifier -->
+                <div title="Si ce n'est pas vous quittez la session" class="connex ms-5 col-2">Bienvenue {{ app.user.getFullName }} <a title="Quitter la session" href="{{ path('app_logout') }}"><svg class="text-danger"xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/><path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/></svg></a>{#  #}
+                </div>
+            {% endif %}
 
         </div>
     </nav>

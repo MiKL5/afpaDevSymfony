@@ -46,6 +46,9 @@ class DiscController extends AbstractController
     #[Route('/{id}', name: 'app_disc_show', methods: ['GET'])]
     public function show(Disc $disc): Response
     {
+        // il être connecter pour accéder
+        $this->denyAccessUnlessGranted('ROLE_USER', null, 'Vous n\'avez pas accès à ceci.');
+        
         return $this->render('disc/show.html.twig', [
             'disc' => $disc,
         ]);

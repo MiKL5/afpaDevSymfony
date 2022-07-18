@@ -3,6 +3,7 @@
 /* background */
 body {
     background-color: rgb(10, 0, 37);
+    height: 100vh;/* 100 de la fenetre du navigateur */
 }
 
 /* Présentation des titres, paraprahes, et liens */
@@ -52,10 +53,21 @@ form {
 /* phrase de connxion */
 .connex {
     color:rgb(169, 216, 191);
-    margin-top:auto;
+    margin-top:inherit;
 }
 
 #user_roles_help {
     color:rgb(255, 208, 0)!important;
     font-style: italic;
 }
+
+.ahahb {
+    background-color: rgba(50, 50, 50, 0.75)!important;
+
+}
+
+/* survol de la souris */
+.ahah:hover {
+    color:rgb(242, 204, 114)!important;
+    background-color: rgba(50, 50, 50, 0.75)!important;
+    }
