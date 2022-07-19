@@ -31,6 +31,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(type: 'boolean')]
     private $isVerified = false;
 
+    #[ORM\Column(length: 255)]
+    private ?string $Name = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $Firstname = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -116,8 +122,32 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function getFullName(): string
     {
-        // if ($this->getNom())
-        //     return $this->getPrenom() . " " . $this->getNom();
+        if ($this->getName())
+            return $this->getFirstname() . " " . $this->getName();
         return $this->getEmail();
+    }
+
+    public function getName(): ?string
+    {
+        return $this->Name;
+    }
+
+    public function setName(string $Name): self
+    {
+        $this->Name = $Name;
+
+        return $this;
+    }
+
+    public function getFirstname(): ?string
+    {
+        return $this->Firstname;
+    }
+
+    public function setFirstname(string $Firstname): self
+    {
+        $this->Firstname = $Firstname;
+
+        return $this;
     }
 }

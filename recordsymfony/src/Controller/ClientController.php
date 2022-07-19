@@ -20,7 +20,7 @@ class ClientController extends AbstractController
         if ($this->getUser()->getUserIdentifier() != $user->getUserIdentifier()) {
             // seul l'admin peut voir les infos de tout le monde
             $this->denyAccessUnlessGranted('ROLE_ADMIN', null, 'Vous n\'avez pas accès à ceci.');
-        }
+        } 
         return $this->render('client/show.html.twig', [
             'user' => $user,
         ]);
@@ -39,7 +39,7 @@ class ClientController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $userRepository->add($user, true);
 
-            return $this->redirectToRoute('app_client_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('client/edit.html.twig', [
