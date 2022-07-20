@@ -52,8 +52,8 @@ form {
 
 /* phrase de connxion */
 .connex {
-    color:rgb(169, 216, 191);
-    margin-top:inherit;
+    color:rgb(0, 199, 93);
+    margin-top: 0px;;
 }
 
 #user_roles_help, #user1_roles_help {
@@ -61,13 +61,13 @@ form {
     font-style: italic;
 }
 
-.ahahb {
+.fondmenu {
     background-color: rgba(50, 50, 50, 0.75)!important;
 
 }
 
 /* survol de la souris */
-.ahah:hover {
+.optionmenu:hover {
     color:rgb(242, 204, 114)!important;
     background-color: rgba(50, 50, 50, 0.75)!important;
     }
