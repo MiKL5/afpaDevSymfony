@@ -56,7 +56,7 @@ form {
     margin-top:inherit;
 }
 
-#user_roles_help {
+#user_roles_help, #user1_roles_help {
     color:rgb(255, 208, 0)!important;
     font-style: italic;
 }

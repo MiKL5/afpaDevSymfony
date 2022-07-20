@@ -75,15 +75,16 @@ class UserController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             // transforms json column into str
-            $roles = $form->get('roles')->getData();
-            $user->setRoles($roles);
-            // encode the plain password
-            $user->setPassword(
-                $userPasswordHasher->hashPassword(
-                        $user,
-                        $form->get('plainPassword')->getData()
-                    )
-                );
+            // LES LIGNES 79 A 87 SONT DEVENUES INUTILES
+            // $roles = $form->get('roles')->getData();
+            // $user->setRoles($roles);
+            // // encode the plain password
+            // $user->setPassword(
+            //     $userPasswordHasher->hashPassword(
+            //             $user,
+            //             // $form->get('plainPassword')->getData()
+            //         )
+            //     );
                 $entityManager->persist($user);
                 $entityManager->flush();
 

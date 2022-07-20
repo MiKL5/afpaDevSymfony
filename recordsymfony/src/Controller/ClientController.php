@@ -39,7 +39,7 @@ class ClientController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $userRepository->add($user, true);
 
-            return $this->redirectToRoute('', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('app_home', [], Response::HTTP_SEE_OTHER); // app_hmom car app.user.id et app_client_show ne fonctionnent pas pour la redirection aprés la modif du profil ou isverified
         }
 
         return $this->renderForm('client/edit.html.twig', [
