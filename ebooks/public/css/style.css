@@ -1,4 +1,13 @@
 body {
     background-color: #c4b18c;
-    height: 100vh;
+    height: 10;
+}
+.navbg {
+    background-color: #5b4e48;
+    height:6vh;
+}
+
+.navfooter {
+    position: static;
+    border-bottom: 0rem;
 }
