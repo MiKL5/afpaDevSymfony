@@ -6,7 +6,7 @@
 			<div class="alert alert-danger" role="alert">{{ flash_error }}</div>
 		{% endfor %}
 
-		<h1 class="mb-5 ms-3 text-primary">Register</h1>
+		<h1 class="mb-5 ms-3">Nouveau compte</h1>
 
 		{# {{ form_start(registrationForm) }}
 		{{ form_row(registrationForm.username, {
@@ -27,7 +27,7 @@
 
         {{form(registrationForm)}}
 
-		<button type="submit" class="btn btn-success ms-3 mt-5">Enregistrer</button>
+		<button type="submit" class="btn btn-success ms-3 mt-5" title="Créer le compte"><i class="bi bi-person-plus-fill"></i></button>
 		{{ form_end(registrationForm) }}
 	</div>
 {% endblock %}

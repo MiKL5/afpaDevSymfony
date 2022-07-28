@@ -75,4 +75,10 @@ class UserController extends AbstractController
 
         return $this->redirectToRoute('app_user_index', [], Response::HTTP_SEE_OTHER);
     }
+
+    // récupère les noms
+    public function __toString()
+    {
+    return $this->User;
+    }
 }

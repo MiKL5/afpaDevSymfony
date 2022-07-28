@@ -21,12 +21,12 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('username',TextType::class,['label'=>'Nom d\'utilisateur','attr' => ['class' => 'bgform',],])
+            // ->add('username',TextType::class,['label'=>'Nom d\'utilisateur','attr' => ['class' => 'bgform',],])
             ->add('name',TextType::class,['label'=>'Nom','attr' => ['class' => 'bgform'],])
-            ->add('firstname',TextType::class,['label'=>'Prénom','attr' => ['class' => 'bgform'],])
+            ->add('firstname',TextType::class,['label'=>'Prénom ','attr' => ['class' => 'bgform'],])
             ->add('email',TextType::class,['label'=>'Adresse de courriel','attr' => ['class' => 'bgform'],])
             // ->add('phone')
-            ->add('birthdate',BirthdayType::class,['label'=>'Date de naissance','attr' => ['class' => 'bgform'],])
+            ->add('birthdate',BirthdayType::class,['label'=>'Date de naissance'])
             ->add('adress',TextType::class,['label'=>'Adresse','attr' => ['class' => 'bgform'],])
             ->add('zipcode',TextType::class,['label'=>'Code postal','constraints' => new Length(['max' => 5]),'attr' => ['class' => 'bgform'],]) 
             ->add('city',TextType::class,['label'=>'Ville','attr' => ['class' => 'bgform'],])
@@ -34,27 +34,29 @@ class RegistrationFormType extends AbstractType
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
                 'mapped' => false,
-                'attr' => ['autocomplete' => 'new-password'],
+                // 'attr' => ['autocomplete' => 'new-password'],
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Please enter a password',
+                        'message' => 'Entrer un mot de passe',
                     ]),
                     new Length([
-                        'min' => 6,
-                        'minMessage' => 'Your password should be at least {{ limit }} characters',
+                        'min' => 8,
+                        'minMessage' => 'Le mot de passe doit comporter au moins {{ limit }} caractères',
                         // max length allowed by Symfony for security reasons
                         'max' => 4096,
                     ]),
                 ],
-                'attr' => ['class' => 'bgform'],
+                'attr' => ['class' => 'rounded bgform m-4'],
             ])
             ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
-                        'message' => 'You should agree to our terms.',
+                        'message' => 'Vous devez accepter nos conditions.',
                     ]),
                 ],
+                'attr' => ['class' => 'bgform'],
+                'attr' => ['title' => 'Vous devez accepter nos conditions'],
             ])
         ;
     }
