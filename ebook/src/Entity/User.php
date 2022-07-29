@@ -19,8 +19,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 180, unique: true)]
-    private ?string $username = null;
+    // #[ORM\Column(length: 180, unique: true)]
+    // private ?string $username = null;
 
     #[ORM\Column]
     private array $roles = [];
@@ -43,8 +43,8 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255)]
     private ?string $email = null;
 
-    #[ORM\Column(type: Types::DECIMAL, precision: 3, scale: '0')]
-    private ?string $age = null;
+    // #[ORM\Column(type: Types::DECIMAL, precision: 3, scale: '0')]
+    // private ?string $age = null;
 
     #[ORM\Column(length: 255)]
     private ?string $adress = null;

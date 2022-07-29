@@ -1,5 +1,22 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+{# {{ form_widget(form) }} #}
+<div class="container">
+	<div class="mb-3 ms-5">
+		{{ form_row(form.name) }}
+	</div>
+	<div class="mb-3 ms-2">
+		{{ form_row(form.firstname) }}
+	</div>
+	<div class="mb-3 ms-5">
+		{{ form_row(form.email) }}
+	</div>
+	<div class="mb-3 ms-5">
+		{{ form_row(form.roles) }}
+	</div>
+	<div class="mb-3 ms-2">
+		{{ form_row(form.password) }}
+	</div>
+	<button class="btn btn-outline-success"><i class="bi bi-plus-circle-fill"></i></button>
+</div>
 
+{{ form_end(form) }}

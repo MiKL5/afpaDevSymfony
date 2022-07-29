@@ -6,13 +6,14 @@ use App\Entity\User;
 use Doctrine\DBAL\Types\DecimalType;
 use Symfony\Component\Form\AbstractType;
 use ApiPlatform\Core\Action\PlaceholderAction;
-use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 
@@ -57,6 +58,19 @@ class RegistrationFormType extends AbstractType
                 ],
                 'attr' => ['class' => 'bgform'],
                 'attr' => ['title' => 'Vous devez accepter nos conditions'],
+            ])
+            ->add('roles', ChoiceType::class,[ 
+                'mapped' => false,
+                'multiple' => true,
+            'choices' => [
+                'ADMNISTRATEUR' => 'ROLE_ADMIN',
+                'CLIENT' => 'ROLE_CLIENT',
+                'UTILISATEUR' => 'ROLE_USER',
+            ],
+                'label' => 'Role.s',
+                'attr' => [
+                    'class'=>'form-control myselect'
+                ],
             ])
         ;
     }

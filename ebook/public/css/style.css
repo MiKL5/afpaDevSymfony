@@ -19,7 +19,8 @@ h1 {
 /*--------*/
 /* NAVBAR */
 .navbg {
-    background-color: rgba(11, 90, 102, 0.904);
+    /* background-color: rgba(11, 90, 102, 0.904); */
+    background-color: rgba(134, 134, 134, 0.479);
     height:6vh;
     color:rgba(11, 90, 102, 0.904);
     /* text-decoration: none!important; */
@@ -33,10 +34,11 @@ h1 {
 
 /*-------------*/
 /* FORMULAIRES */
-.bgform, .form-control{
+.bgform, .form-control, input, .user_roles {
     color: white;
     background-color: rgba(205, 182, 157, 0.591);
     box-shadow: rgba(0, 0, 0, 0.521) -5px -5px 5px;
+    border-radius: 5em;
 }
 
 label {
@@ -66,4 +68,14 @@ small {
     font-weight: bold;
     color:red;
     text-shadow: rgb(0, 0, 0) -5px -5px 5px;
+}
+
+#user_roles_help, .help_text {
+    color:rgb(255, 208, 0)!important;
+    font-style: italic;
+}
+
+.bd :hover{
+    background-color: black;
+    color:red;
 }
