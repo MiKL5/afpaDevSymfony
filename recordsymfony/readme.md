@@ -22,14 +22,18 @@ Créer les premières fixtures.
     - il est possible uniquement à l'administrateur d'ajouter et retirer les artistes ;
     - les clients et l'administrateur voient la fiche des artistes ;
 
-<img src="src\screenshot\record\artists.png" alt="Artists" title="Artists" widht="900 px" height="auto">
+![Artists](src\screenshot\record\artists.jpg)
+
+<img src="src\screenshot\record\artists.jpg" alt="Artists" title="Artists" widht="900 px" height="auto">
 
 
 - Liste des disque
     - il est possible uniquement à l'administrateur d'ajouter et retirer les discques ;
     - les clients et l'administrateur voient la fiche des disques ;
 
-<img src="src\screenshot\record\discs.png" alt="Discs" title="Discs" widht="900 px" height="auto">
+![Discs](src\screenshot\record\discs.jpg)
+
+<img src="src\screenshot\record\discs.jpg" alt="Discs" title="Discs" widht="900 px" height="auto">
 
 
 - L'authentification
@@ -50,8 +54,12 @@ Créer les premières fixtures.
 
 Écran de connexion
 
+![Login](src\screenshot\record\authentification.jpg)
+
 <img src="src\screenshot\record\authentication.png" alt="Authentification" title="Authentification" widht="900 px" height="auto">
 
 S'enregistrer
+
+![register](src\screenshot\record\register.jpg)
 
 <img src="src\screenshot\record\register.png" alt="Register" title="Regitster" widht="900 px" height="auto">
