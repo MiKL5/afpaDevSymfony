@@ -18,16 +18,40 @@ C'est un type de programme qui se place en interface entre le site Record et la 
 Ajouter un jeu de test dans la base.
 Créer les premières fixtures.
 
-- Les formulaires & leurs contrôles sous Synfony
+- Liste des artistes
+    - il est possible uniquement à l'administrateur d'ajouter et retirer les artistes ;
+    - les clients et l'administrateur voient la fiche des artistes ;
 
-[finir à cette page : https://ncode.amorce.org/parcours/172/7034]
+<img src="src\screenshot\record\artists.png" alt="Artists" title="Artists" widht="900 px" height="auto">
+
+
+- Liste des disque
+    - il est possible uniquement à l'administrateur d'ajouter et retirer les discques ;
+    - les clients et l'administrateur voient la fiche des disques ;
+
+<img src="src\screenshot\record\discs.png" alt="Discs" title="Discs" widht="900 px" height="auto">
+
 
 - L'authentification
+    - Les personnes non connectés ont le rôles user qui permet de voir uniquement :
+        - la liste des disques et artistes ;
+        - d'accéder au menu de connexion pour soit se connecter ou créer un compte ;
+    - Seul l'administrateur voit les informations de tous les utilisateurs
+        - Les clients ne voient que leurs informations personnelles ;
+    - Il est possible de réinitialiser le mot de passe ;
 
+- Liste de utilisateur
 
+| Nom | Prénom | Rôle | Email | Mot de passe |
+|---|---|---|---|---|
+| | | Admin | admin@admin.com | admin1 |
+| O'Nym | Ann | Client | ann.o-nym@gmail.com | azerty1 |
+| PART | Léo | Client | leo.part@gmail.com | 123456 |
 
-- Les API avec API-Plateform
+Écran de connexion
 
+<img src="src\screenshot\record\authentication.png" alt="Authentification" title="Authentification" widht="900 px" height="auto">
 
+S'enregistrer
 
-- Les tests unitaires
+<img src="src\screenshot\record\register.png" alt="Register" title="Regitster" widht="900 px" height="auto">
