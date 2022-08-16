@@ -35,7 +35,7 @@ h1 {
 /*-------------*/
 /* FORMULAIRES */
 .bgform, .form-control, input, .user_roles {
-    color: white;
+    color: rgb(255, 255, 255, 1);
     background-color: rgba(205, 182, 157, 0.591);
     box-shadow: rgba(0, 0, 0, 0.521) -5px -5px 5px;
     border-radius: 5em;
@@ -55,12 +55,57 @@ label {
     background-color : rgba(255, 166, 2, 0.904);
     color : #fff
 }
+/* Séléction du menu catégories */
+.bd :hover{
+    background-color: rgb(255, 51, 0);
+    color:rgb(255, 255, 255);
+}
+.une :hover{
+    background-color: rgb(255, 0, 200);
+    color:rgb(255, 255, 255);
+}
+.manga :hover{
+    background-color: rgb(255, 187, 0);
+    color:rgb(255, 255, 255);
+}
+.kid :hover{
+    background-color: rgb(0, 138, 30);
+    color:rgb(255, 255, 255);
+}
+.literature :hover{
+    background-color: rgb(112, 0, 6);
+    color:rgb(255, 255, 255);
+}
+.suspense :hover{
+    background-color: rgb(59, 12, 14);
+    color:rgb(255, 255, 255);
+}
+.humor :hover{
+    background-color: rgb(143, 145, 41);
+    color:rgb(255, 255, 255);
+}
+.dev :hover{
+    background-color: rgb(126, 186, 235);
+    color:rgb(0, 0, 0);
+}
+.culture :hover{
+    background-color: rgb(19, 107, 59);
+    color:rgb(255, 255, 255);
+}
+.ebooks :hover{
+    background-color: rgb(19, 12, 59);
+    color:rgb(255, 255, 255);
+}
+.audiobooks :hover{
+    background-color: rgb(255, 136, 0);
+    color:rgb(255, 255, 255);
+}
+
 
 small {
     color:aquamarine;
     text-align: center!important;
     text-shadow: rgb(0, 0, 0) -5px -5px 5px;
-
 }
 
 .textspecial {
@@ -75,7 +120,3 @@ small {
     font-style: italic;
 }
 
-.bd :hover{
-    background-color: black;
-    color:red;
-}
