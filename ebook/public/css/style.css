@@ -105,10 +105,10 @@ label {
 }
 /* Séléction du menu user */
 .user{
-    color:rgb(179, 0, 0);
+    color:rgb(175, 0, 0);
 }
 .user :hover{
-    background-color: rgb(179, 0, 0);
+    background-color: rgb(175, 0, 0);
     color:rgb(255, 255, 255);
 }
 

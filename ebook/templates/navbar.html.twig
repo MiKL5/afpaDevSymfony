@@ -88,7 +88,7 @@
                     <a class="dropdown-item nav-link user" href="{{path ('app_login')}}">Se connecter</a>
                 </button>
             </li>
-            <li class ="class="user"">
+            <li class="user">
                 <button class="dropdown-item nav-link navbg" type="button" title="Se créer un compte | Première connexion">
                     <a class="dropdown-item nav-link user" href="{{path ('app_register')}}">
                         <i class="bi bi-person-plus-fill me-3"></i>
@@ -100,7 +100,7 @@
             <!-- que pour l'admin -->
             {% if is_granted('ROLE_ADMIN') %}
                 <li class="user">
-                    <button class="dropdown-item nav-link  " type="button" title="Liste des utilisateurs">
+                    <button class="dropdown-item nav-link" type="button" title="Liste des utilisateurs">
                         <a class="dropdown-item nav-link user" href="{{path ('app_user_index')}}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-person-rolodex text-warning me-2" viewBox="0 0 16 16">*
                                 <path d="M8 9.05a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
