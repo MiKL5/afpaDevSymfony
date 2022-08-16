@@ -56,6 +56,9 @@ label {
     color : #fff
 }
 /* Séléction du menu catégories */
+.categories{
+    color:rgba(0, 0, 0, 0.801);
+}
 .bd :hover{
     background-color: rgb(255, 51, 0);
     color:rgb(255, 255, 255);
@@ -100,7 +103,14 @@ label {
     background-color: rgb(255, 136, 0);
     color:rgb(255, 255, 255);
 }
-
+/* Séléction du menu user */
+.user{
+    color:rgb(179, 0, 0);
+}
+.user :hover{
+    background-color: rgb(179, 0, 0);
+    color:rgb(255, 255, 255);
+}
 
 small {
     color:aquamarine;
