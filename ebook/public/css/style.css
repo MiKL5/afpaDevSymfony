@@ -57,7 +57,8 @@ label {
 }
 /* Séléction du menu catégories */
 .categories{
-    color:rgba(0, 0, 0, 0.801);
+    /* color:rgba(0, 0, 0, 0.801); */
+    color:rgba(255, 255, 255, 1);
 }
 .bd :hover{
     background-color: rgb(255, 51, 0);
@@ -105,7 +106,7 @@ label {
 }
 /* Séléction du menu user */
 .user{
-    color:rgb(175, 0, 0);
+    color:rgb(255, 255, 255);
 }
 .user :hover{
     background-color: rgb(175, 0, 0);

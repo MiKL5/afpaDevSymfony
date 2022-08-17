@@ -27,7 +27,7 @@ class UserType extends AbstractType
                 'help' => 'Maintenez Ctrl pour choisir plusieurs roles',
                 'required' => true,
                 'row_attr' => [
-                    'class' => 'col-12 ml-3 rounded',
+                    'class' => 'col-6 ml-3 rounded',
                     ],
                 ])
 
