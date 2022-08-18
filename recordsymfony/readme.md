@@ -1,3 +1,5 @@
+<img src="https://github.com/MiKL5/afpaDev/blob/master/src/img/record-transparent.png" alt="Velvet Record" title="Velvet Record" widht="1024px" height="autoo">
+
 # **Velvet Record** <img align="right" src="https://github.com/MiKL5/afpaDev/blob/master/src/img/php_anim.jpg" alt="PHP" title="PHP" widht="auto" height="64px">
 
 > avec le framework Symfony
@@ -22,14 +24,14 @@ Créer les premières fixtures.
     - il est possible uniquement à l'administrateur d'ajouter et retirer les artistes ;
     - les clients et l'administrateur voient la fiche des artistes ;
 
-<img src="..\src\screenshot\record\artists.png" alt="Artists" title="Artists" widht="900 px" height="auto">
+<img src="..\src\screenshot\record\artists.png" alt="Artists" title="Artists" widht="1024px" height="auto">
 
 
 - Liste des disque
     - il est possible uniquement à l'administrateur d'ajouter et retirer les discques ;
     - les clients et l'administrateur voient la fiche des disques ;
 
-<img src="..\src\screenshot\record\discs.png" alt="Discs" title="Discs" widht="900 px" height="auto">
+<img src="..\src\screenshot\record\discs.png" alt="Discs" title="Discs" widht="1024px" height="auto">
 
 
 - L'authentification
@@ -50,8 +52,8 @@ Créer les premières fixtures.
 
 Écran de connexion
 
-<img src="..\src\screenshot\record\authentication.png" alt="Authentification" title="Authentification" widht="900 px" height="auto">
+<img src="..\src\screenshot\record\authentication.png" alt="Authentification" title="Authentification" widht="1024px" height="auto">
 
 S'enregistrer
 
-<img src="..\src\screenshot\record\register.png" alt="Register" title="Regitster" widht="900 px" height="auto">
+<img src="..\src\screenshot\record\register.png" alt="Register" title="Regitster" widht="1024px" height="auto">
