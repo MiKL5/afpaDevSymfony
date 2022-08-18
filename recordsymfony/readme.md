@@ -1,4 +1,4 @@
-# **Velvet Record**
+# **Velvet Record** <img align="right" src="https://github.com/MiKL5/afpaDev/blob/master/src/img/php_anim.jpg" alt="PHP" title="PHP" widht="auto" height="64px">
 
 > avec le framework Symfony
 
