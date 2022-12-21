@@ -47,7 +47,7 @@ Utilser un moteur de template (Twig) qui récupère facilement les données tran
 | ----- | ------ | ------ | ------------------- | ------------ |
 |       |        | Admin  | admin@admin.com     | admin1       |
 | O'Nym | Ann    | Client | ann.o-nym@gmail.com | azerty1      |
-| PART  | Léo    | Client | leo.part@gmail.com  | 123456       |
+| PARD  | Léo    | Client | leo.pard@gmail.com  | 123456       |
 
 Écran de connexion
 
